@@ -17,11 +17,11 @@ to get port, run `docker ps` or view `run.sh`
 
 ## detail
 
-u16: python2.7+pip 20+pwntools+tmux
+u16: python 3.5+pip 20+pwntools+tmux+peda
 
-u18: python 3.6+last pip+pwntools+tmux
+u18: python 3.6+last pip+pwntools+tmux+peda
 
-u20: python 3.8+last pip+pwntools+tmux
+u20: python 3.8+last pip+pwntools+tmux+peda
 
 ## debug
 
