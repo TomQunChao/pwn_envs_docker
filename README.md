@@ -5,7 +5,8 @@ include ubuntu 16.04, 18.04, 20.04, 22.04
 ## compile
 
 1. install [docker](https://docs.docker.com/engine/install/ubuntu/)
-2. enter u16/18/20/22, run `./build.sh`
+2. enter u16/18/20/22, run `./build.sh` or
+3. pull it on [dockerhub](https://hub.docker.com/u/tong5hu4i)
 
 ## run
 
