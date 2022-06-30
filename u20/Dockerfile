@@ -8,7 +8,7 @@ COPY ./start.sh /opt/start.sh
 ENV TZ=Asia/Shanghai
 RUN sed -i 's/http:\/\/archive.ubuntu.com/http:\/\/mirror.sjtu.edu.cn/g' /etc/apt/sources.list && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
-    dpkg --add-architecture && \
+    dpkg --add-architecture i386 && \
     apt update && \
     apt install python3 python3-pip python3-dev git lib32z1 libc6:i386 libncurses5:i386 libstdc++6:i386 libssl-dev libffi-dev build-essential gdb gdbserver ssh  man openssh-client build-essential proxychains git z3 openssh-server vim python3 python3-pip python3-setuptools tmux curl python3-dev python3-setuptools wget git -y && \
     # apt install  locales locales-all && \
