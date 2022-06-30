@@ -21,10 +21,9 @@ index-url = https://mirror.sjtu.edu.cn/pypi/web/simple \
 format = columns" > /root/.pip/pip.conf && \
     # curl https://bootstrap.pypa.io/pip/3.5/get-pip.py | python3 && \
     python3 -m pip install --upgrade pip -i https://mirror.sjtu.edu.cn/pypi/web/simple && \
-    pip3 install pwntools zio ipython flake8 isort yapf libcsearcher one_gadget -i https://mirror.sjtu.edu.cn/pypi/web/simple && \
-    curl -sLf https://spacevim.org/cn/install.sh | bash && \
+    pip3 install pwntools ropgadget zio ipython flake8 isort yapf libcsearcher one_gadget -i https://mirror.sjtu.edu.cn/pypi/web/simple && \
     echo "source /opt/peda/peda.py" >> /root/.gdbinit
 COPY ./sshd_config /etc/ssh/sshd_config
-COPY ./init.toml /root/.SpaceVim.d/init.toml
+# COPY ./init.toml /root/.SpaceVim.d/init.toml
 EXPOSE 22
 CMD ["/opt/start.sh"]

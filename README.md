@@ -25,6 +25,8 @@ u18: python 3.6+last pip+pwntools+tmux+peda
 
 u20: python 3.8+last pip+pwntools+tmux+peda
 
+alternatives: pwndbg on u18/20/22, SpaceVim for coding on u18/20/22, gdb-multiarch
+
 ## debug
 
 to debug, first run `tmux`, then replace code `io=process('filename')` with 
