@@ -15,6 +15,8 @@ to connect, run `ssh root@127.0.0.1 -p [port]`
 
 to get port, run `docker ps` or view `run.sh`
 
+It's recommanded to connect to docker via ssh and code remote using vscode
+
 ## detail
 
 u16: python 3.5+pip 20+pwntools+tmux+peda
@@ -31,6 +33,6 @@ to debug, first run `tmux`, then replace code `io=process('filename')` with
 io=gdb.debug('filename')
 ```
 
-then runexp.py
+then run `python exp.py` in tmux
 
 to copy, please view man page detail of tmux
