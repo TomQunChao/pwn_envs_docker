@@ -68,7 +68,7 @@ to copy, please view man page detail of tmux
 - push image to ghcr.io by Github Actions
 - install vscode-server by default
 
-## Recommend Learning
+## Recommend Reading
 
 - [how2heap](https://github.com/shellphish/how2heap)
 - [CyberAngle's pwn turtoal(Chinese)](https://www.yuque.com/cyberangel/rg9gdm/rimvzk)
