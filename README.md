@@ -34,13 +34,11 @@ Host 127.0.0.1
 
 ## detail
 
-u16: python 3.5+pip 20+pwntools+tmux+peda
-
-u18: python 3.6+lastest pip+pwntools+tmux+peda
-
-u20: python 3.8+lastest pip+pwntools+tmux+peda
-
-alternatives: pwndbg on u18/20/22, SpaceVim for coding on u18/20/22, gdb-multiarch
+- u16: python 3.5+pip 20+pwntools+tmux+peda
+- u18: python 3.6+lastest pip+pwntools+tmux+peda
+- u20: python 3.8+lastest pip+pwntools+tmux+peda
+- This mirror use sjtu mirror, you can change it in docker file
+- alternatives: pwndbg on u18/20/22, SpaceVim for coding on u18/20/22, gdb-multiarch
 
 ## debug
 
@@ -71,4 +69,11 @@ to copy, please view man page detail of tmux
 - push image to ghcr.io by Github Actions
 - install vscode-server by default
 
-Hope your star >_-
+## Recommend Learning
+
+- [how2heap](https://github.com/shellphish/how2heap)
+- [CyberAngle's pwn turtoal(Chinese)](https://www.yuque.com/cyberangel/rg9gdm/rimvzk)
+- [glibc all in one](https://github.com/fr0ster/glibc-all-in-one/tree/b3131109b8846751466b6e5a05d62c27ebffd45f)
+- [Buuoj's glibc](https://buuoj.cn/resources)
+
+Hope your issues and stars >_-
