@@ -58,7 +58,7 @@ to copy, please view man page detail of tmux
 
 - add ssh rsa-key login
 - optimize directory structure
-- allow debug source
+- allow debug glibc source
 
 ## TODO
 
