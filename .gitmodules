@@ -1,6 +1,6 @@
 [submodule "peda"]
-	path = peda
+	path = assets/submodules/peda
 	url = https://github.com/longld/peda
 [submodule "pwndbg"]
-	path = pwndbg
+	path = assets/submodules/pwndbg
 	url = https://github.com/pwndbg/pwndbg
