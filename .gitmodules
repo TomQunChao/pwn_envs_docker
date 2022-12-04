@@ -1,6 +1,12 @@
-[submodule "peda"]
+# [submodule "peda"]
+# 	path = assets/submodules/peda
+# 	url = https://github.com/longld/peda
+# [submodule "pwndbg"]
+# 	path = assets/submodules/pwndbg
+# 	url = https://github.com/pwndbg/pwndbg
+[submodule "assets/submodules/peda"]
 	path = assets/submodules/peda
 	url = https://github.com/longld/peda
-[submodule "pwndbg"]
+[submodule "assets/submodules/pwndbg"]
 	path = assets/submodules/pwndbg
 	url = https://github.com/pwndbg/pwndbg
