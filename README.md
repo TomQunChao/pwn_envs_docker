@@ -71,6 +71,7 @@ to copy, please view man page detail of tmux
 - proxychains
 - push image to ghcr.io by Github Actions
 - install vscode-server by default
+- qemu support(kernel pwn,multi arch support...)
 
 ## Recommend Reading
 
