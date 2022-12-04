@@ -1,0 +1,11 @@
+capstone==4.0.2
+# This can be removed after ida_script.py upgrades to Python 3
+future==0.18.2
+psutil==5.9.2
+pwntools==4.8.0
+pycparser==2.21
+pyelftools==0.29
+Pygments==2.13.0
+ROPGadget==7.1
+unicorn==2.0.1; python_version >= '3.7'
+unicorn==2.0.0rc7; python_version < '3.7'

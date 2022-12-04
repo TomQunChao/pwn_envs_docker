@@ -1,0 +1,53 @@
+name: Unit tests
+on: [push, pull_request]
+
+jobs:
+  tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, ubuntu-20.04, ubuntu-18.04]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+    - uses: actions/checkout@v3
+    - name: Cache for pip
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ matrix.os }}-cache-pip
+
+    - name: Install dependencies
+      run: |
+        ./setup.sh --user
+        ./setup-dev.sh --user
+        pip install --user coveralls
+
+    - name: Python version info
+      run: |
+        echo 'GDB py:'
+        gdb --batch --quiet --nx --nh --ex 'py import sys; print(sys.version)'
+        echo 'Installed py:'
+        python -V
+        echo 'Installed packages:'
+        python -m pip freeze
+
+    # We to set `kernel.yama.ptrace_scope=0` for `attachp` command tests
+    - name: Run tests
+      run: |
+        mkdir .cov
+        sudo sysctl -w kernel.yama.ptrace_scope=0
+        PWNDBG_GITHUB_ACTIONS_TEST_RUN=1 ./tests.sh --cov
+
+    - name: Process coverage data
+      if: matrix.os == 'ubuntu-22.04'
+      run: |
+        coverage combine
+        coverage xml
+
+    - name: "Upload coverage to Codecov"
+      if: matrix.os == 'ubuntu-22.04'
+      uses: codecov/codecov-action@v3
+      with:
+        fail_ci_if_error: true
+

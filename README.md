@@ -18,13 +18,27 @@ to get port, run `docker ps` or view `run.sh`
 
 It's recommanded to connect to docker via ssh and code remote using vscode
 
+ssh-key login: add following config to your ~/.ssh_config, ssh-key is in `assets/ssh_keys` folder
+
+```sh
+# Your host with docker
+Host 127.0.0.1
+  HostName 192.168.56.105
+  User root
+  Port [port]
+  IdentityFile ~/.ssh/id_rsa1
+# ssh-key path
+```
+
+**Warning**: don't use this public key for other uses, or your projects will be exposed to danger!
+
 ## detail
 
 u16: python 3.5+pip 20+pwntools+tmux+peda
 
-u18: python 3.6+last pip+pwntools+tmux+peda
+u18: python 3.6+lastest pip+pwntools+tmux+peda
 
-u20: python 3.8+last pip+pwntools+tmux+peda
+u20: python 3.8+lastest pip+pwntools+tmux+peda
 
 alternatives: pwndbg on u18/20/22, SpaceVim for coding on u18/20/22, gdb-multiarch
 
@@ -39,3 +53,22 @@ io=gdb.debug('filename')
 then run `python exp.py` in tmux
 
 to copy, please view man page detail of tmux
+
+## ChangeLog
+
+### 20221204
+
+- add ssh rsa-key login
+- optimize directory structure
+
+## TODO
+
+- add debug mode compiled glibc
+- install pwndbg/gef by default
+- install SpaceVim by Default
+- set tmux to split screen vertically
+- proxychains
+- push image to ghcr.io by Github Actions
+- install vscode-server by default
+
+Hope your star >_-

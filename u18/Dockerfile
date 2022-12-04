@@ -1,10 +1,9 @@
 FROM ubuntu:18.04
 
-COPY ./peda /opt/peda
-COPY ./.bashrc /root/.bashrc
+COPY ./assets/submodules/peda /opt/peda
+COPY ./assets/configs/.bashrc /root/.bashrc
 WORKDIR /root
-COPY ./.bashrc /root
-COPY ./start.sh /opt/start.sh
+COPY ./assets/scripts/start.sh /opt/start.sh
 ENV TZ=Asia/Shanghai
 RUN sed -i 's/http:\/\/archive.ubuntu.com/http:\/\/mirror.sjtu.edu.cn/g' /etc/apt/sources.list && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
@@ -16,6 +15,8 @@ RUN sed -i 's/http:\/\/archive.ubuntu.com/http:\/\/mirror.sjtu.edu.cn/g' /etc/ap
     sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config && \
     mkdir /root/.pip && \
+    mkdir /root/.ssh && \
+    # wget https://aka.ms/install-vscode-server/setup.sh && chmod +x ./setup.sh && ./setup.sh \
     echo "[global] \
 index-url = https://mirror.sjtu.edu.cn/pypi/web/simple \
 format = columns" > /root/.pip/pip.conf && \
@@ -23,7 +24,8 @@ format = columns" > /root/.pip/pip.conf && \
     python3 -m pip install --upgrade pip -i https://mirror.sjtu.edu.cn/pypi/web/simple && \
     pip3 install pwntools zio ipython flake8 libcsearcher isort yapf ropgadget one_gadget -i https://mirror.sjtu.edu.cn/pypi/web/simple && \
     echo "source /opt/peda/peda.py" >> /root/.gdbinit
-COPY ./sshd_config /etc/ssh/sshd_config
+COPY ./assets/configs/sshd_config /etc/ssh/sshd_config
+COPY ./assets/ssh_keys/id_rsa1.pub /root/.ssh/authorized_keys
 # COPY ./init.toml /root/.SpaceVim.d/init.toml
 EXPOSE 22
 CMD ["/opt/start.sh"]
