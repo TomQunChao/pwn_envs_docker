@@ -61,7 +61,6 @@ to copy, please view man page detail of tmux
 
 ## TODO
 
-- add debug mode compiled glibc
 - install pwndbg/gef by default
 - install SpaceVim by Default
 - set tmux to split screen vertically
